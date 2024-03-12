@@ -30,11 +30,27 @@ function yaris(){
     secenek1.setAttribute("id", "secenek1");
     secenek1.classList.add("secenek");
     secenek1.innerHTML=takimlar[rastgeleTakim].sampiyonluk;
+    secenek1.addEventListener("click", function() {
+        if (takimlar[rastgeleTakim].sampiyonluk === takimlar[rastgeleTakim].sampiyonluk) {
+            sonuc.innerHTML = "Tebrikler, doğru cevap!";
+        } else {
+            sonuc.innerHTML = "Maalesef, yanlış cevap!";
+        }
+        btnBasla.disabled = false;
+    });
 
     const secenek2=document.createElement("button");
     secenekler.appendChild(secenek2);
     secenek2.setAttribute("id", "secenek2");
     secenek2.classList.add("secenek");
     secenek2.innerHTML=takimlar[rastgeleTakim].sampiyonluk+1;
+    secenek2.addEventListener("click", ()=> {
+        if (takimlar[rastgeleTakim].sampiyonluk === takimlar[rastgeleTakim].sampiyonluk+1) {
+            sonuc.innerHTML = "Tebrikler, doğru cevap!";
+        } else {
+            sonuc.innerHTML = "Maalesef, yanlış cevap!";
+        }
+        btnBasla.disabled = false;
+    });
 
 }
